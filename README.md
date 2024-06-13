@@ -42,6 +42,19 @@ newman run "D:\Postman\Hotel Booking API\Hotel Booking Details.postman_collectio
 - `-e "D:\Postman\Hotel Booking API\Hotel Booking Utils.postman_environment.json"` : Path to your Postman environment file.
 - `-r htmlextra` : Specifies the reporter type as enhanced HTML.
 - `--reporter-htmlextra-export "D:\Postman\Hotel Booking API\Enhanced-report.html"` : Path where the enhanced HTML report will be saved.
+## Step 6: Run Newman with Multiple Iterations
+To run your Postman collection for multiple iterations, use the `--iteration-count` option. For example, to run 5 iterations:
+### Basic HTML Report with Multiple Iterations
+```sh
+newman run "D:\Postman\Hotel Booking API\Hotel Booking Details.postman_collection.json" -e "D:\Postman\Hotel Booking API\Hotel Booking Utils.postman_environment.json" -r html --reporter-html-export "D:\Postman\Hotel Booking API\Basic-report.html" --iteration-count 5
+```
+### Enhanced HTML Report with Multiple Iterations
+```sh
+newman run "D:\Postman\Hotel Booking API\Hotel Booking Details.postman_collection.json" -e "D:\Postman\Hotel Booking API\Hotel Booking Utils.postman_environment.json" -r htmlextra --reporter-htmlextra-export "D:\Postman\Hotel Booking API\Enhanced-report.html" --iteration-count 5
+```
+### Explanation of the Command
+- `--iteration-count 5` : Specifies the number of iterations to run the collection.
 ## Summary
-By following the steps outlined in this guide, you can install Newman, set up HTML reporters, and execute your Postman collections to generate both basic and enhanced HTML reports. Make sure to adjust file paths according to your setup.
+By following the steps outlined in this guide, you can install Newman, set up HTML reporters, and execute your Postman collections to generate both basic and enhanced HTML reports. Additionally, you can run multiple iterations of your collection. Make sure to adjust file paths and iteration counts according to your setup.
+
 For more detailed documentation and options, you can refer to the official [Newman documentation](https://github.com/postmanlabs/newman#readme).
