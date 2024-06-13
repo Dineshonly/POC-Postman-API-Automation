@@ -1,4 +1,4 @@
-# Postman-API-Automation
+# Postman-API-Automation Guide
 # Newman Installation and Execution Guide
 This guide provides detailed steps to install Newman and generate HTML reports for your Postman collections and environments. Follow the instructions below to set up Newman, install the necessary reporters, and execute your Postman collections.
 
