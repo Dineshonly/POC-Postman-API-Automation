@@ -1,0 +1,28 @@
+name: Postman Collection Runner
+
+on: [push]
+
+jobs:
+  run-postman-collection:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14'
+
+    - name: Install Newman
+      run: npm install -g newman
+
+    - name: Install HTML Reporters
+      run: |
+        npm install -g newman-reporter-html
+        npm install -g newman-reporter-htmlextra
+
+    - name: Run Postman Collection with Enhanced HTML Report
+      run: |
+        newman run "POC-Postman-API-Automation/Hotel Booking Details.postman_collection.json" -e "POC-Postman-API-Automation/Hotel Booking Utils.postman_environment.json" -r htmlextra --reporter-htmlextra-export "Enhanced-report.html"
